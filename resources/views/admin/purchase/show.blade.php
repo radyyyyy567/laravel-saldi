@@ -22,11 +22,17 @@
                 <p class="text-lg font-semibold text-gray-900 dark:text-gray-400 p-1">Purchased Quantity:
                     {{ $purchase->quantity }}
                 </p>
+                <p class="text-lg font-semibold text-gray-900 dark:text-gray-400 p-1">Date Order:
+                    {{ $purchase->created_at }}
+                </p>
+                <p class="text-lg font-semibold text-gray-900 dark:text-gray-400 p-1">Date Purchased:
+                    {{ $purchase->updated_at }}
+                </p>
                 <p class="text-lg font-semibold text-gray-900 dark:text-gray-400 p-1">Amount: {{ $purchase->amount }}$</p>
                 <p class="text-lg font-semibold text-gray-900 dark:text-gray-400 p-1">Value-Added Tax: {{ $purchase->vat }}$
                 </p>
                 <p class="text-lg font-semibold text-gray-900 dark:text-gray-400 p-1">Total Amount:
-                    {{ $purchase->amount * $purchase->quantity }}$</p>
+                    Rp.{{ $purchase->amount * $purchase->quantity }}</p>
                 <p class="text-lg font-semibold text-gray-900 dark:text-gray-400 p-1">
                     Status: <span
                         class="{{ $purchase->status === 'pending' ? 'text-red-500' : 'text-green-500' }} capitalize">{{ $purchase->status }}</span>

@@ -24,7 +24,7 @@
                             </div>
                         </div>
                         <div class="flex">
-                            <span class="title-font font-medium text-2xl text-gray-900">${{ $product->price }}</span>
+                            <span class="title-font font-medium text-2xl text-gray-900">Rp.{{ $product->price }}</span>
                             <a href="{{ url('/checkouts/' . $product->id) }}"
                                 class="flex ml-auto text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 border-0 py-2 px-6 rounded-lg">
                                 Go to Checkout

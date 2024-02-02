@@ -98,7 +98,7 @@
                                 {{ $order->product->category->name }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $order->total_quantity }}
+                                Rp.{{ $order->total_quantity }}
                             </td>
                             <td class="px-6 py-4">
                                 {{ $order->grand_total }}

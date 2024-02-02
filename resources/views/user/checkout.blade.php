@@ -16,7 +16,7 @@
                             <div class="flex w-full flex-col px-4 py-4">
                                 <span class="font-semibold">{{ $product->name }}</span>
                                 <span class="float-right text-gray-400">{{ $product->category->name }}</span>
-                                <p class="text-lg font-bold">${{ $product->price }}</p>
+                                <p class="text-lg font-bold">Rp.{{ $product->price }}</p>
                                 <span class="float-right text-gray-400 pb-1">Avl. Qty: {{ $product->quantity }}</span>
                                 <div class="relative">
                                     <input type="number" id="total_quantity" name="total_quantity"
@@ -146,8 +146,8 @@
                             <select type="text" name="state"
                                 class="w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500">
                                 <option value="">Select State</option>
-                                <option value="Myanmar" {{ old('state') === 'Myanmar' ? 'selected' : '' }}>
-                                    Myanmar
+                                <option value="Myanmar" {{ old('state') === 'Indonesia' ? 'selected' : '' }}>
+                                    Indonesia
                                 </option>
                                 <option value="Thailand" {{ old('state') === 'Thailand' ? 'selected' : '' }}>
                                     Thailand
@@ -204,9 +204,9 @@
             const vat = (quantity > 0) ? 0.05 * subtotal : 0;
             const total = subtotal + vat;
 
-            document.getElementById('subtotal').textContent = "$" + subtotal.toFixed(2);
-            document.getElementById('vat').textContent = "$" + vat.toFixed(2);
-            document.getElementById('total').textContent = "$" + total.toFixed(2);
+            document.getElementById('subtotal').textContent = "Rp." + subtotal.toFixed(2);
+            document.getElementById('vat').textContent = "Rp." + vat.toFixed(2);
+            document.getElementById('total').textContent = "Rp." + total.toFixed(2);
         }
         document.getElementById('total_quantity').addEventListener('input', updateOrderSummary);
         updateOrderSummary();

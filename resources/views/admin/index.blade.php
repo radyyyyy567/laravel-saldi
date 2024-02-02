@@ -57,25 +57,31 @@
     </div>
 
     <div>
-    <h2 class="text-xl font-semibold mb-3">Montly Total Amounts</h2>
-    
-    <table class="min-w-full bg-white border border-gray-300">
-        <thead>
-            <tr>
-                <th class="py-2 px-4 border bg-blue-600 text-white font-semibold">Time</th>
-                <th class="py-2 px-4 border bg-blue-600 text-white font-semibold">Total Amount</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($monthlyTotalAmounts as $monthlyTotal)
+        <h2 class="text-xl font-semibold mb-3">Monthly Total Amounts</h2>
+        
+        <table class="min-w-full bg-white border border-gray-300">
+            <thead>
                 <tr>
-                    <td class="py-2 px-4 border">{{ date('F Y', mktime(0, 0, 0, $monthlyTotal->month, 1, $monthlyTotal->year)) }}</td>
-                    <td class="py-2 px-4 border">{{ $monthlyTotal->total_amount }}</td>
+                    <th class="py-2 px-4 border bg-blue-600 text-white font-semibold">Index</th>
+                    <th class="py-2 px-4 border bg-blue-600 text-white font-semibold">Month and Year</th>
+                    <th class="py-2 px-4 border bg-blue-600 text-white font-semibold">Product</th>
+                    <th class="py-2 px-4 border bg-blue-600 text-white font-semibold">Qty Product</th>
+                    <th class="py-2 px-4 border bg-blue-600 text-white font-semibold">Total Amount</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+                @foreach ($monthlyTotalAmounts as $index => $monthlyTotal)
+                    <tr>
+                        <td class="py-2 px-4 border">{{ $index + 1 }}</td>
+                        <td class="py-2 px-4 border">{{ date('F Y', mktime(0, 0, 0, $monthlyTotal->month, 1, $monthlyTotal->year)) }}</td>
+                        <td class="py-2 px-4 border">{{ $monthlyTotal->product->name }}</td>
+                        <td class="py-2 px-4 border">{{ $monthlyTotal->total_quantity }}</td>
+                        <td class="py-2 px-4 border">{{ $monthlyTotal->total_amount }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 
 </div>
 @endsection

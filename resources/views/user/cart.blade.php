@@ -92,7 +92,7 @@
                                 {{ $cart->product->category->name }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $cart->product->price }}
+                                Rp.{{ $cart->product->price }}
                             </td>
                             <td class="px-6 py-4">
                                 <div class="flex gap-4">

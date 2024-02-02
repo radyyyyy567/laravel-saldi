@@ -69,7 +69,7 @@
                             <td class="px-6 py-4 {{ $product->quantity === 0 ? 'text-red-600' : '' }}">
                                 {{ $product->quantity }}
                             </td>
-                            <td class="px-6 py-4">{{ $product->price }}$</td>
+                            <td class="px-6 py-4">Rp.{{ $product->price }}</td>
                             <td class="px-6 py-4">
                                 <form action="{{ url('/admin/products/' . $product->id) }}" method="POST">
                                     @csrf

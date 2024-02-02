@@ -32,13 +32,13 @@
                                 <span class="mr-3">Color: {{ $checkout->product->color }}</span>
                                 <span class="mr-3">Size: {{ $checkout->product->size }}</span>
                                 <span class="mr-3">Purch Qty: {{ $checkout->total_quantity }}</span>
-                                <span class="mr-3">Sub Total: ${{ $checkout->total_amount }}</span>
-                                <span class="mr-3">VAT: ${{ $checkout->vat }}</span>
+                                <span class="mr-3">Sub Total: Rp.{{ $checkout->total_amount }}</span>
+                                <span class="mr-3">VAT: Rp.{{ $checkout->vat }}</span>
                             </div>
                         </div>
                         <div class="flex">
                             <span
-                                class="title-font font-medium text-2xl text-gray-900">${{ $checkout->grand_total }}</span>
+                                class="title-font font-medium text-2xl text-gray-900">Rp.{{ $checkout->grand_total }}</span>
                         </div>
                     </div>
                 </div>

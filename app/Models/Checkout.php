@@ -16,6 +16,11 @@ class Checkout extends Model
         return $this->belongsTo(Product::class, 'product_id');
     }
 
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'id');
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');

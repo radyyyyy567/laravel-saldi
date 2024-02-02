@@ -25,7 +25,7 @@
                 <p class="text-lg font-semibold text-gray-900 dark:text-gray-400 p-1">Purchased Quantity:
                     {{ $product->quantity }}
                 </p>
-                <p class="text-lg font-semibold text-gray-900 dark:text-gray-400 p-1">Price: {{ $product->price }}$</p>
+                <p class="text-lg font-semibold text-gray-900 dark:text-gray-400 p-1">Price: Rp.{{ $product->price }}</p>
             </div>
         </div>
     </div>
